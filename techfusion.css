@@ -1,0 +1,417 @@
+/* Navbar and logo setup */
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.left-corner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.left-corner-img img {
+    width: 400px;
+    height: auto;
+}
+
+header {
+    background-color: #000;
+    padding: 0px;
+    text-align: right;
+    position: sticky;
+    top: 0;
+    height: 25px;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0px;
+}
+
+
+/* Navbar */
+
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px;
+}
+
+.navbar li {
+    padding-top: 0px;
+    margin-top: 50px;
+}
+
+.navbar a {
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: transparent;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    text-decoration: none;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #ffa500;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffa500;
+    background-color: rgba(255, 165, 0, 0.2);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+
+/* Mobile styles */
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ffa500;
+    /* Professional color for the hamburger */
+    z-index: 1001;
+    /* Ensure it's on top */
+    position: relative;
+    /* To maintain positioning */
+}
+
+@media (max-width: 968px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        top: 60px;
+        /* Adjust based on your header height */
+        left: 0;
+        z-index: 1000;
+        /* Below hamburger */
+    }
+    .navbar.active {
+        display: flex;
+    }
+    .hamburger {
+        display: block;
+    }
+    .left-corner-img {
+        z-index: 999;
+        /* Keep the logo below the hamburger */
+    }
+    li {
+        padding-right: 45%;
+    }
+}
+
+
+/* General Styles */
+
+body {
+    font-family: 'Lucida Sans', sans-serif;
+    background-image: url('logo/images (3).png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #f1f1f1;
+    margin: 0;
+}
+
+
+/* Content Section */
+
+.content-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #262626;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+
+/* Main Title */
+
+h1 {
+    font-size: 3rem;
+    font-weight: 200;
+    color: #dcb20a;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+
+/* Subtitle */
+
+h2 {
+    font-size: 1.8rem;
+    color: #ffcc00;
+    margin: 10px 0;
+}
+
+
+/* Image Section */
+
+.img {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.img img {
+    max-width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.5);
+}
+
+
+/* Details Section */
+
+.details {
+    text-align: left;
+}
+
+.det {
+    font-size: 1.2rem;
+    color: #f1f1f1;
+    margin-bottom: 20px;
+}
+
+.det p {
+    line-height: 1.5;
+}
+
+
+/* Coordinator Details */
+
+.coordinator-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+
+/* Individual coordinator box */
+
+.person {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(33.333% - 40px);
+    margin: 10px;
+    padding: 20px;
+    background-color: #131212;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+}
+
+.person:hover {
+    background-color: #333333;
+}
+
+
+/* Coordinator image */
+
+.person img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.person img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.5);
+}
+
+
+/* Coordinator name */
+
+.person h3 {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+/* Coordinator description */
+
+.person p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.5;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+
+/* Highlight strong text in description */
+
+p strong {
+    color: #ffcc00;
+}
+
+
+/*footer*/
+
+.footer {
+    background-color: #0c0b0b;
+    /* Black background for footer */
+    color: #fcfcf2;
+    /* White text color */
+    display: flex;
+    /* Flexbox for layout */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 5px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-left,
+.footer-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-middle ul {
+    flex: 2;
+    font-size: 15px;
+    padding: 10px;
+    margin-left: 15px;
+}
+
+.footer-left h4,
+.footer-middle h4,
+.footer-right h4 {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #d9ee9a;
+}
+
+.footer-left p,
+.footer-right p {
+    font-size: 0.8em;
+    margin: 0;
+}
+
+.footer-middle ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-middle li {
+    margin: 5px 0;
+}
+
+.footer-middle a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
+    transition: color 0.3s;
+}
+
+.footer-middle a:hover {
+    color: #00bfff;
+}
+
+.footer-right p {
+    font-size: 0.8em;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-right: 1px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    .container {
+        justify-content: center;
+        margin-left: 20px;
+    }
+    header {
+        padding: 10px;
+        background-color: transparent;
+        border: none;
+        border-color: #000000;
+    }
+    .a p {
+        color: wheat;
+        font-family: 'Lucida Grande';
+        font-size: 17px;
+        text-indent: 30px;
+        padding-left: 10px;
+        padding-right: 15px;
+        text-align: center;
+        width: 80%;
+        margin-left: auto;
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+    }
+    .image img {
+        width: 120px;
+    }
+    .heading {
+        font-size: 18px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .footer-content {
+        margin-right: 80px;
+        margin-left:20px ;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 768px) {
+    html, body {
+      overflow-x: hidden;
+      width: 100%; /* Ensures the body doesn't overflow */
+      margin: 0; /* Removes default margins that may cause overflow */
+      padding: 0; /* Removes any padding causing overflow */
+      text-align: justify;
+    }
+  }
+  

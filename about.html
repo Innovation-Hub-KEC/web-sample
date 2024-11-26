@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation Hub -About page </title>
+    <style>
+        /* Navbar and logo setup */
+        
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        .left-corner-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px;
+        }
+        
+        .left-corner-img img {
+            width: 400px;
+            height: auto;
+        }
+        
+        header {
+            background-color: #000;
+            padding: 0px;
+            text-align: right;
+            position: sticky;
+            top: 0;
+            height: 25px;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 0px;
+        }
+        /* Navbar */
+        
+        .navbar {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            margin: 0px;
+        }
+        
+        .navbar li {
+            padding-top: 0px;
+            margin-top: 50px;
+        }
+        
+        .navbar a {
+            display: inline-block;
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            position: relative;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            background-color: transparent;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            text-decoration: none;
+        }
+        
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background: #ffa500;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s;
+        }
+        
+        .navbar a:hover {
+            color: #ffa500;
+            background-color: rgba(255, 165, 0, 0.2);
+        }
+        
+        .navbar a:hover::after {
+            width: 100%;
+        }
+        /* Mobile styles */
+        
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: #ffa500;
+            /* Professional color for the hamburger */
+            z-index: 1001;
+            /* Ensure it's on top */
+            position: relative;
+            /* To maintain positioning */
+        }
+        /* Additional Element Styling */
+        
+        .container {
+            justify-content: center;
+            margin-left: 20px;
+        }
+        
+        header {
+            padding: 10px;
+            background-color: transparent;
+            border: none;
+            border-color: #000000;
+        }
+        
+        .a p {
+            color: wheat;
+            font-family: 'Lucida Grande';
+            font-size: 17px;
+            text-indent: 30px;
+            padding: 10px 15px;
+            text-align: center;
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .image img {
+            width: 120px;
+        }
+        
+        .heading {
+            font-size: 18px;
+        }
+        
+        p {
+            font-size: 16px;
+        }
+        
+        .footer-content {
+            margin-right: 90px;
+            margin-bottom: 20px;
+        }
+        /* General Styles */
+        
+        body {
+            font-family: 'Lucida Sans', sans-serif;
+            background-image: url('logo/abt.jfif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+        }
+        /* Content Section */
+        
+        .content-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #4d4b4b;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        /* Main Title */
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 200;
+            color: #dcb20a;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        /* Subtitle */
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #ffcc00;
+            margin: 10px 0;
+        }
+        
+        p {
+            color: #ccc;
+            text-align: justify;
+        }
+        /* Image Section */
+        
+        .img {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .img img {
+            max-width: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .img img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 204, 0, 0.5);
+        }
+        /* Details Section */
+        
+        .details {
+            text-align: left;
+        }
+        /* Coordinator Details */
+        
+        .coordinator-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        /* Individual coordinator box */
+        
+        .person {
+            display: flex;
+            flex-direction: column;
+            flex-basis: calc(33.333% - 40px);
+            margin: 10px;
+            padding: 20px;
+            background-color: #222121;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            box-sizing: border-box;
+        }
+        
+        .person:hover {
+            background-color: #333333;
+        }
+        /* Coordinator image */
+        
+        .person img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .person img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 204, 0, 0.5);
+        }
+        /* Coordinator name */
+        
+        .person h3 {
+            font-size: 1.5rem;
+            color: #ffcc00;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        /* Coordinator description */
+        
+        .person p {
+            font-size: 1rem;
+            color: #ccc;
+            line-height: 1.5;
+            text-align: justify;
+            text-indent: 25px;
+        }
+        /* Highlight strong text in description */
+        
+        p strong {
+            color: #ffcc00;
+        }
+        /* Responsive Design */
+        /*footer*/
+        
+        .footer {
+            background-color: #0c0b0b;
+            /* Black background for footer */
+            color: #fcfcf2;
+            /* White text color */
+            display: flex;
+            /* Flexbox for layout */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            padding: 5px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .footer-left,
+        .footer-right {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-middle ul {
+            flex: 2;
+            font-size: 15px;
+            padding: 10px;
+            margin-left: 15px;
+        }
+        
+        .footer-left h4,
+        .footer-middle h4,
+        .footer-right h4 {
+            font-size: 1em;
+            margin-bottom: 5px;
+            color: #d9ee9a;
+        }
+        
+        .footer-left p,
+        .footer-right p {
+            font-size: 0.8em;
+            margin: 0;
+        }
+        
+        .footer-middle ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-middle li {
+            margin: 5px 0;
+        }
+        
+        .footer-middle a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.8em;
+            transition: color 0.3s;
+        }
+        
+        .footer-middle a:hover {
+            color: #00bfff;
+        }
+        
+        .footer-right p {
+            font-size: 0.8em;
+            margin: 0;
+        }
+        
+        .footer-left {
+            margin: 0;
+        }
+        
+        @media (max-width: 968px) {
+            .navbar {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                background-color: rgba(0, 0, 0, 0.9);
+                width: 100%;
+                top: 60px;
+                /* Adjust based on header height */
+                left: 0;
+                z-index: 1000;
+                font-size: smaller;
+            }
+            .navbar.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .left-corner-img {
+                z-index: 999;
+            }
+            li {
+                padding-right: 0;
+                /* Reduced padding for smaller screens */
+            }
+        }
+        /* Screens 768px and Below */
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+                overflow-x: hidden;
+            }
+            .container {
+                justify-content: center;
+                margin: 0 10px;
+                width: 100%;
+            }
+            header {
+                padding: 10px;
+                background-color: transparent;
+                border: none;
+            }
+            .a p {
+                color: wheat;
+                font-family: 'Lucida Grande';
+                font-size: 16px;
+                text-align: center;
+                width: 90%;
+                margin: auto;
+                padding: 5px 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .image img {
+                width: 100px;
+                /* Reduced size for mobile */
+            }
+            .left-corner-img {
+                z-index: 999;
+            }
+            .content-section .bulb {
+                width: auto;
+                height: 400px;
+            }
+            .heading {
+                font-size: 16px;
+            }
+            p {
+                font-size: 15px;
+            }
+            .footer-content {
+                margin: 0 auto 20px auto;
+                text-align: center;
+            }
+        }
+        /* Extra Small Screen Adjustments (480px and Below) */
+        
+        @media (max-width: 480px) {
+            .navbar {
+                font-size: 14px;
+            }
+            li {
+                padding-right: 5%;
+            }
+            .heading {
+                font-size: 14px;
+            }
+            .a p {
+                font-size: 14px;
+            }
+            .footer-content {
+                margin: 0 auto 15px auto;
+                font-size: 14px;
+                padding: 5px;
+            }
+        }
+        /* Additional Element Styling */
+        
+        .container {
+            justify-content: center;
+            margin: 0 20px;
+            width: 100%;
+        }
+        
+        header {
+            padding: 10px;
+            background-color: transparent;
+            border: none;
+            border-color: #000000;
+        }
+        
+        .a p {
+            color: wheat;
+            font-family: 'Lucida Grande';
+            font-size: 17px;
+            text-indent: 30px;
+            padding: 10px 15px;
+            text-align: center;
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .image img {
+            width: 120px;
+        }
+        
+        .heading {
+            font-size: 18px;
+        }
+        
+        p {
+            font-size: 16px;
+        }
+        
+        .footer-content {
+            margin-right: 90px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+    html, body {
+      overflow-x: hidden;
+      width: 100%; /* Ensures the body doesn't overflow */
+      margin: 0; /* Removes default margins that may cause overflow */
+      padding: 0; /* Removes any padding causing overflow */
+    }
+  }
+  
+    </style>
+</head>
+
+<body>
+
+    <!-- Header with Navbar -->
+    <header style="background-color: black;padding-bottom: 86px;">
+        <div class="left-corner-img">
+            <img src="logo\bannerr.jpg" alt="Left Corner Image">
+        </div>
+        <nav>
+            <div class="hamburger" id="hamburger">
+                &#9776;
+            </div>
+            <ul class="navbar" id="navbar">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="nodes.html">Nodes</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section class="content-section">
+        <br>
+        <center>
+            <h1 style="font-family: 'Lucida Grande'; font-size: xx-large;"> Inspire, Aspire, Reach Higher!</h1>
+            <br>
+            <img src="logo\hubor-removebg-preview - Milcah Blessy.png" alt="Hub logo" class="bulb"></center>
+        <div class="details ">
+
+
+            <p><strong>Vision:</strong><b> "Ignite a Future of Limitless Possibilities!”</b> We envision a world where every young dreamer is empowered to break barriers and create transformative solutions, shaping a brighter tomorrow filled with innovation,
+                creativity, and purpose.</p><br><br>
+
+            <p><strong>Mission:</strong> <b>“Empowering You to Dream Bigger!”</b> Our mission is to fuel your passion and drive by providing an exhilarating space where imagination meets action. We equip you with the knowledge, resources, and mentorship
+                needed to turn your wildest ideas into reality. Together, we inspire you to aspire for greatness and reach heights you never thought possible!</p>
+
+
+
+            <br><br>
+            <p><strong>Description:</strong> Welcome to the Innovation Hub—your launchpad for extraordinary ideas and uncharted paths! Here, we celebrate your creativity and ambition, providing an energetic environment where you can collaborate, learn, and
+                grow. Dive into hands-on workshops, connect with like-minded innovators, and unleash your potential through mentorship from industry leaders. We believe that your ideas can change the world, and we’re here to support you every step of
+                the way. Join us, and together, let’s inspire, aspire, and reach higher!</p>
+            <br><br><br><br> </div>
+
+        <!-- Convenor -->
+
+        <h1 style="font-family:'Lucida Grande'; ">HUB CONVENOR </h1>
+        <div class="person">
+            <h1></h1>
+            <center>
+                <h3>Dr.D.C.Jullie Josephine</h3><br>
+                <img src="photos/hod.jpeg" alt="Convenor Image"></center>
+            <p> She has more than 28 years of teaching experience and she is currently working as professor & Head -IT in Kings Engineering College,Chennai. She has Supervised more than 30 UG & PG projects .She has received best research model from TNSCST
+                and received best research paper awards .She has published more than 30 papers in reputed journals and published four patterns and six books with ISBN number. Her area of interest includes network security ,cyber security, data science
+                and deep learning , Sensor networks, Internet of Things. She has Supervised and completed projects by receiving grants from MSME and various consultanc.
+            </p>
+        </div><br><br><br>
+        <h1 style="font-family:'Lucida Grande'; ">HUB COORDINATORS </h1>
+        <!-- Coordinators -->
+        <div class="person">
+            <h3>Rajkumar U</h3><br>
+            <center>
+                <img src="photos/Rajkumar.jpeg" alt="Coordinator 1 Image">
+            </center>
+            <p>Innovation is the spark that ignites the future. I, Rajkumar , a final year student in the Department of Information Technology , am excited to serve as the Overall Coordinator of our innovation hub. It is with great enthusiasm that I welcome
+                you to this vibrant community where creativity and collaboration thrive. Our hub is dedicated to empowering young minds, providing the resources and mentorship necessary to transform ideas into reality.
+            </p>
+        </div>
+
+        <div class="person">
+            <h3>Milcah Blessy I</h3>
+            <center><img src="photos/milcah.jpeg" alt="Coordinator 2 Image">
+            </center>
+            <p> Innovation is the spark that ignites the future. I, Milcah Blessy, a final year student in the Department of Information Technology, excited to serve as the Overall Coordinator of our innovation hub. It is with great enthusiasm that I welcome
+                you to this vibrant community where creativity and collaboration thrive. Our hub is dedicated to empowering young minds, providing the resources and mentorship necessary to transform ideas into reality, lets journey together!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer ">
+        <div class="footer-content " style="padding-top: 15px; ">
+            <div class="footer-left " style="padding-left: 20px; padding-right: 20px;">
+                <h4>About Us</h4>
+                <p style="padding-left: 30px; margin-bottom: 5px; ">Fostering innovation.</p>
+
+            </div>
+            <div class="footer-middle " style="padding-left: 10px; padding-right:10px">
+                <h5 style="color:#d9ee9a;">Quick Links</h4>
+                    <ul>
+                        <li style="padding-left: 10px; ">
+                            <a href="about.html ">About</a>
+                        </li>
+                        <li style="padding-left: 10px; ">
+                            <a href="nodes.html ">Nodes</a>
+                        </li>
+                        <li style="padding-left: 10px; ">
+                            <a href="contact.html ">Contact</a>
+                        </li>
+
+                    </ul>
+            </div>
+            <div class="footer-right " style="padding-left: 40px;">
+                <h4>Contact Us</h4>
+                <a href="mailto:innohubit@kingsedu.ac.in" style="color: #fbfcf9;">Innohubit@kingsedu.ac.in</a>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="heroes " style="padding: 10px;padding-top: 30px;margin-bottom: 0px; ">
+            <p style="color: white;font-size: 12px; ">
+                &copy; 2024 KEC INNOHUB. | All rights reversed. | Developed by Akash & Kumar | Released on November-2024.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js "></script>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.getElementById('navbar');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+
+</body>
+
+</html>
